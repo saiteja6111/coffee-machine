@@ -26,9 +26,9 @@ Menu = {
 }
 
 start = True
-Water = 100
-Milk = 50
-Coffee = 76
+Water = 300
+Milk = 200
+Coffee = 100
 Money = 0
 
 def insert_Coin():
@@ -64,5 +64,20 @@ while start:
         elif Cost < 1.50:
             print("Sorry that's not enough money")
             continue
+    elif user_choice.lower() == "2":
+        insert_Coin()
+        if Cost >= 2.50:
+            if Water >= Menu["latte"]["ingredients"]["water"] and Milk >= Menu["latte"]["ingredients"]["milk"] and Coffee >= Menu["latte"]["ingredients"]["coffee"]:
+                Water -= Menu["latte"]["ingredients"]["water"]
+                Milk -= Menu["latte"]["ingredients"]["milk"]
+                Coffee -= Menu["latte"]["ingredients"]["coffee"]
+            Cost -= 2.50
+            if Cost > 0:
+                print(f"Here is your change ${Cost} Thank you!")
+            else:
+                print("Thank You!")
+        elif Cost < 2.50:
+            print("Sorry that's not enough money")
 
+            
 
