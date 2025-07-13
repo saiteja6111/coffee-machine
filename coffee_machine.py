@@ -68,8 +68,10 @@ while start:
             Cost -= 1.50
             if Cost > 0:
                 print(f"Here is your change ${round(Cost,2)} Thank you!\n")
+                print("Enjoy your espresso☕️")
             else:
                 print("Thank You!\n")
+                print("Enjoy your espresso☕️")
         elif Cost < 1.50:
             print("Sorry that's not enough money\n")
             continue
@@ -97,9 +99,11 @@ while start:
             Cost -= 2.50
             if Cost > 0:
                 print(f"Here is your change ${round(Cost,2)} Thank you!\n")
+                print("Enjoy your latte☕️")
                 continue
             else:
                 print("Thank You!\n")
+                print("Enjoy your latte☕️")
                 continue
         elif Cost < 2.50:
             print("Sorry that's not enough money\n")
@@ -129,9 +133,11 @@ while start:
             Cost -= 3.00
             if Cost > 0:
                 print(f"Here is your change ${round(Cost,2)} Thank you!\n")
+                print("Enjoy your cappuccino☕️")
                 continue
             else:
                 print("Thank You!\n")
+                print("Enjoy your cappuccino☕️")
                 continue
         elif Cost < 3.00:
             print("Sorry that's not enough money\n")
