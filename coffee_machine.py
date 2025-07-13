@@ -53,9 +53,18 @@ while start:
     elif user_choice.lower() == "1":
         insert_Coin()
         if Cost >= 1.50:
-            if Water >= Menu["espresso"]["ingredients"]["water"] and Coffee >= Menu["espresso"]["ingredients"]["coffee"]:
+            if Water >= Menu["espresso"]["ingredients"]["water"]:
                 Water -= Menu["espresso"]["ingredients"]["water"]
+            else:
+                print("there is no enough water!")
+                print(f"Here is your change ${round(Cost,2)} Thank you!\n")
+                continue
+            if Coffee >= Menu["espresso"]["ingredients"]["coffee"]:
                 Coffee -= Menu["espresso"]["ingredients"]["coffee"]
+            else:
+                print("there is no enough coffee!")
+                print(f"Here is your change ${round(Cost,2)} Thank you!\n")
+                continue
             Cost -= 1.50
             if Cost > 0:
                 print(f"Here is your change ${round(Cost,2)} Thank you!\n")
@@ -67,10 +76,24 @@ while start:
     elif user_choice.lower() == "2":
         insert_Coin()
         if Cost >= 2.50:
-            if Water >= Menu["latte"]["ingredients"]["water"] and Milk >= Menu["latte"]["ingredients"]["milk"] and Coffee >= Menu["latte"]["ingredients"]["coffee"]:
+            if Water >= Menu["latte"]["ingredients"]["water"]:
                 Water -= Menu["latte"]["ingredients"]["water"]
+            else:
+                print("there is no enough water!")
+                print(f"Here is your change ${round(Cost,2)} Thank you!\n")
+                continue
+            if Milk >= Menu["latte"]["ingredients"]["milk"]:
                 Milk -= Menu["latte"]["ingredients"]["milk"]
+            else:
+                print("There is no enough milk!")
+                print(f"Here is your change ${round(Cost,2)} Thank you!\n")
+                continue
+            if Coffee >= Menu["latte"]["ingredients"]["coffee"]:
                 Coffee -= Menu["latte"]["ingredients"]["coffee"]
+            else:
+                print("There is no enough coffee!")
+                print(f"Here is your change ${round(Cost,2)} Thank you!\n")
+                continue
             Cost -= 2.50
             if Cost > 0:
                 print(f"Here is your change ${round(Cost,2)} Thank you!\n")
@@ -85,10 +108,24 @@ while start:
     elif user_choice.lower() == '3':
         insert_Coin()
         if Cost >= 3.00:
-            if Water >= Menu["cappuccino"]["ingredients"]["water"] and Milk >= Menu["latte"]["ingredients"]["milk"] and Coffee >= Menu["cappuccino"]["ingredients"]["coffee"]:
+            if Water >= Menu["cappuccino"]["ingredients"]["water"]:
                 Water -= Menu["cappuccino"]["ingredients"]["water"]
+            else:
+                print("There is no enough water!")
+                print(f"Here is your change ${round(Cost,2)} Thank you!\n")
+                continue
+            if Milk >= Menu["latte"]["ingredients"]["milk"]:
                 Milk -= Menu["latte"]["ingredients"]["milk"]
+            else:
+                print("There is no enough milk!")
+                print(f"Here is your change ${round(Cost,2)} Thank you!\n")
+                continue
+            if Coffee >= Menu["cappuccino"]["ingredients"]["coffee"]:
                 Coffee -= Menu["cappuccino"]["ingredients"]["coffee"]
+            else:
+                print("There is no enough coffee!")
+                print(f"Here is your change ${round(Cost,2)} Thank you!\n")
+                continue
             Cost -= 3.00
             if Cost > 0:
                 print(f"Here is your change ${round(Cost,2)} Thank you!\n")
@@ -99,6 +136,3 @@ while start:
         elif Cost < 3.00:
             print("Sorry that's not enough money\n")
             continue
-
-            
-
