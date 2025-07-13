@@ -33,10 +33,10 @@ Money = 0
 
 def insert_Coin():
     global quarters,dimes,nickles,pennies,Cost
-    quarters = int(input("Enter the no of quaters(coins): "))
-    dimes = int(input("Enter the no of dimes(coins): "))
-    nickles = int(input("Enter the no of nickles(coins): "))
-    pennies = int(input("Enter the no of pennies(coins): "))
+    quarters = float(input("Enter the no of quaters(coins): "))
+    dimes = float(input("Enter the no of dimes(coins): "))
+    nickles = float(input("Enter the no of nickles(coins): "))
+    pennies = float(input("Enter the no of pennies(coins): "))
     Cost = quarters * 0.25 + dimes * 0.10 + nickles * 0.05 + pennies * 0.01
     Cost = round(Cost,2)
 
@@ -58,11 +58,11 @@ while start:
                 Coffee -= Menu["espresso"]["ingredients"]["coffee"]
             Cost -= 1.50
             if Cost > 0:
-                print(f"Here is your change ${Cost} Thank you!")
+                print(f"Here is your change ${round(Cost,2)} Thank you!\n")
             else:
-                print("Thank You!")
+                print("Thank You!\n")
         elif Cost < 1.50:
-            print("Sorry that's not enough money")
+            print("Sorry that's not enough money\n")
             continue
     elif user_choice.lower() == "2":
         insert_Coin()
@@ -73,11 +73,32 @@ while start:
                 Coffee -= Menu["latte"]["ingredients"]["coffee"]
             Cost -= 2.50
             if Cost > 0:
-                print(f"Here is your change ${Cost} Thank you!")
+                print(f"Here is your change ${round(Cost,2)} Thank you!\n")
+                continue
             else:
-                print("Thank You!")
+                print("Thank You!\n")
+                continue
         elif Cost < 2.50:
-            print("Sorry that's not enough money")
+            print("Sorry that's not enough money\n")
+            continue
+    
+    elif user_choice.lower() == '3':
+        insert_Coin()
+        if Cost >= 3.00:
+            if Water >= Menu["cappuccino"]["ingredients"]["water"] and Milk >= Menu["latte"]["ingredients"]["milk"] and Coffee >= Menu["cappuccino"]["ingredients"]["coffee"]:
+                Water -= Menu["cappuccino"]["ingredients"]["water"]
+                Milk -= Menu["latte"]["ingredients"]["milk"]
+                Coffee -= Menu["cappuccino"]["ingredients"]["coffee"]
+            Cost -= 3.00
+            if Cost > 0:
+                print(f"Here is your change ${round(Cost,2)} Thank you!\n")
+                continue
+            else:
+                print("Thank You!\n")
+                continue
+        elif Cost < 3.00:
+            print("Sorry that's not enough money\n")
+            continue
 
             
 
